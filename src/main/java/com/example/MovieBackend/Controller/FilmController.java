@@ -1,10 +1,11 @@
-package com.example.MovieBackend.filmController;
+package com.example.MovieBackend.Controller;
 
 import com.example.MovieBackend.dao.FilmInterface;
 import com.example.MovieBackend.model.FilmModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Iterator;
 import java.util.List;
 
 @RestController
@@ -24,6 +25,4 @@ public class FilmController {
     public FilmModel createFilm(@RequestBody FilmModel films){
         return FilmsDao.save(films);
     }
-
-    
 }
