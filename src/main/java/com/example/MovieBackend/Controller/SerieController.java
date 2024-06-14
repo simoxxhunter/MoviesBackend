@@ -1,7 +1,7 @@
 package com.example.MovieBackend.Controller;
 
-import com.example.MovieBackend.dao.FilmInterface;
-import com.example.MovieBackend.model.FilmModel;
+import com.example.MovieBackend.dao.SerieInterface;
+import com.example.MovieBackend.model.SerieModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,17 +13,17 @@ import java.util.List;
 public class SerieController {
 
     @Autowired
-    private FilmInterface FilmsDao;
+    private SerieInterface SerieDao;
 
     @GetMapping
-    public List<FilmModel>
-    getAllFilms(){
-        return FilmsDao.findAll();
+    public List<SerieModel> getAllSeries()
+    {
+        return SerieDao.findAll();
     }
 
     @PostMapping
-    public FilmModel createFilm(@RequestBody FilmModel films){
-        return FilmsDao.save(films);
+    public SerieModel createSerie(@RequestBody SerieModel series){
+        return SerieDao.save(series);
     }
 
 

@@ -16,24 +16,24 @@ import java.util.Set;
 public class UserModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUser;
     private String userName;
     private String password;
 
     @ManyToMany
     @JoinTable(
-            name = "FilmFavorit",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "film_id")
+            name = "FavFilm",
+            joinColumns = @JoinColumn(name = "idUser"),
+            inverseJoinColumns = @JoinColumn(name = "id")
     )
     private Set<FilmModel> favoriteFilms;
 
     @ManyToMany
     @JoinTable(
-            name = "SerieFavorit",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "sirie_id")
+            name = "FavSerie",
+            joinColumns = @JoinColumn(name = "idUser"),
+            inverseJoinColumns = @JoinColumn(name = "idSerie")
     )
     private Set<SerieModel> favoriteSiries;
 }

@@ -15,7 +15,7 @@ import java.util.Set;
 public class SerieModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idSerie;
     private String titre;
     private String description;
