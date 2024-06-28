@@ -5,10 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.Set;
 
 @Entity
+@Table(name = "Films")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,22 +17,14 @@ public class FilmModel {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
-
+        private Long Film_ID;
         private String titre;
-
         private String description;
-
         private String dateDeSortie;
-
         private Integer duree;
-
         private String genre;
-
         private String realisateur;
-
         private String acteurs;
-
         private Double note;
 
         @ManyToMany(mappedBy = "favoriteFilms")

@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Iterator;
 import java.util.List;
 
+@SuppressWarnings("unused")
 @RestController
 @RequestMapping("/Films")
+@CrossOrigin (origins = "http://localhost:4200")
 public class FilmController {
 
     @Autowired

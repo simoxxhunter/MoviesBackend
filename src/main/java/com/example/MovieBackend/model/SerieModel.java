@@ -8,6 +8,8 @@ import lombok.Setter;
 import java.util.Set;
 
 @Entity
+@Table(name = "Series")
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,13 +18,13 @@ public class SerieModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSerie;
+    private int Serie_ID;
     private String titre;
     private String description;
     private String dateDebut;
     private String dateFin;
     private String acteurs;
 
-    @ManyToMany(mappedBy = "favoriteSiries")
+    @ManyToMany(mappedBy = "favoriteSeries")
     private Set<UserModel> users;
 }

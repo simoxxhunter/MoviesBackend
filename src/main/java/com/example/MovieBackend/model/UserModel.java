@@ -9,6 +9,8 @@ import lombok.Setter;
 import java.util.Set;
 
 @Entity
+@Table(name = "Users")
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,23 +19,23 @@ public class UserModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUser;
+    private int UserID;
     private String userName;
     private String password;
 
     @ManyToMany
     @JoinTable(
-            name = "FavFilm",
-            joinColumns = @JoinColumn(name = "idUser"),
-            inverseJoinColumns = @JoinColumn(name = "id")
+            name = "FavoriteFilms",
+            joinColumns = @JoinColumn(name = "UserID"),
+            inverseJoinColumns = @JoinColumn(name = "Film_ID")
     )
     private Set<FilmModel> favoriteFilms;
 
     @ManyToMany
     @JoinTable(
-            name = "FavSerie",
-            joinColumns = @JoinColumn(name = "idUser"),
-            inverseJoinColumns = @JoinColumn(name = "idSerie")
+            name = "FavoriteSeries",
+            joinColumns = @JoinColumn(name = "UserID"),
+            inverseJoinColumns = @JoinColumn(name = "Serie_ID")
     )
-    private Set<SerieModel> favoriteSiries;
+    private Set<SerieModel> favoriteSeries;
 }
